@@ -1,0 +1,208 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 1px solid #00aeff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.top {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 讓影片佔據整個視窗高度 */
+    overflow: hidden;
+    
+}
+
+#main-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持影片比例 */
+    z-index: -1;
+}
+#content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+/* 縮小圖片 */ 
+#content img { 
+    width: 100%; /* 設置圖片的寬度，例如50% */ 
+    max-width: 200px; /* 設置圖片的最大寬度 */ 
+    height: auto; /* 保持圖片的比例 */
+}
+
+.main-area {
+    display: flex;
+    justify-content: center;  
+    min-height: 100vh;
+    background-color: #f497c3;
+    padding: 20px;
+    padding-top: 50px;
+}
+.art-area{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.tikisto-title{
+     margin-bottom: 20px; 
+     font-size: 2.4vw;
+}
+.tikisto-listspace {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.list{
+    overflow: hidden;
+    flex: 1; /* 每個子元素均分空間 */ 
+    margin: 0 10px; /* 每個子元素之間留些間距 */ 
+    background-color: #e0e0e0; 
+    text-align: center; 
+    border-radius: 5px;
+    max-height: 500px;
+    
+}
+.list img { 
+       
+    width: auto;
+    height: 100%; 
+    object-fit: cover; /* 保持圖片比例並覆蓋容器 */ 
+    top: 50%; left: 50%;
+    transform: translate(-30%,0);
+}
+
+.main-area2 {
+    min-height: 100vh;
+    background-color: #97f4d8;
+    padding: 20px;
+    padding-top: 50px;
+}
+.content-title{
+    margin-bottom: 20px; 
+     font-size: 2.4vw;
+     color: white;
+}
+.content-area {
+    width: 80%;
+    background-color: black;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 調整組與組之間的間距 */
+}
+.content-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.content-group .photo{
+    width: 50%;
+}
+.content-group .photo img{
+    width: 100%;
+    height: auto;
+}
+.content-group .text{
+    color: azure;
+    width: 50%;
+    align-items: start;
+}
+.content-group .text h1{
+    font-size: 1.4vw;
+}
+.store-title{
+    margin-bottom: 20px; 
+     font-size: 2.4vw;
+     color: white;
+}
+.store-text{
+    margin-bottom: 20px; 
+     font-size: 1.14vw;
+     color: white;
+}
+.map{
+    margin: 0 auto; /* 橫向置中 */ 
+    
+}
+
+
+
+.wrapper_parent {
+    display: grid;
+    place-items: center;
+    height: 100vh; /* 確保父元素高度佔滿視窗 */
+}
+
+.wrapper {
+    display: grid;
+    /* grid-template-areas用來畫出grid的版型，可以自訂每個區域的名稱*/
+    grid-template-areas:
+        "img title title" 
+        "img subtitle subtitle"
+        "img date location"
+        "img content content";
+    /* grid-template-rows & grid-template-columns 這兩個屬性用來指定grid的行和列的數量及大小*/
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr; /* 2:1:1:1:1 */
+    /* grid-template-rows: repeat(2, 1fr); 也可以這樣寫，代表2行，每行大小一樣*/
+    grid-template-columns: 1fr 1fr 30px 2fr; /* 1:1:(固定30px):2 */
+    /* grid-template-columns: repeat(4, 1fr); 也可以這樣寫，代表4列，每列大小一樣*/
+    /* gap用來指定間距 */
+    gap: 1rem;
+    background-color: blueviolet;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 50px;
+    
+}
+
+.item1 {
+    /* grid-area用來指定區域的名稱，對應到上一層grid-template-areas的區域名稱*/
+    grid-area: img;
+}
+.item1 img{
+    width: 100%;
+    height: auto;
+}
+.item2 {
+    grid-area: title;
+}
+
+.item3 {
+    grid-area: subtitle;
+}
+
+.item4 {
+    grid-area: date;
+}
+
+.item5 {
+    grid-area: location;
+}
+
+.item6 {
+    grid-area: content;
+}
+
+
+
