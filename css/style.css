@@ -18,7 +18,7 @@
 }
 
 :root {
-     --text-color: #ccc28d; /* var(--text-color); */
+     --text-color: #996699; /* var(--text-color); */
 }
 
 * {
@@ -31,6 +31,9 @@ body, html {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    font-family: "kinkakuji", sans-serif;
+font-weight: 700;
+font-style: normal;
 }
 
 
@@ -135,12 +138,16 @@ body, html {
     margin-bottom: 20px;
     font-size: 2.4vw;
     color: var(--text-color);
+    text-shadow: 2px 2px 2px #F3E5AB; /* 設定白色陰影#FFFDD0 */
 }
+
 
 .content-group {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px; 
+    align-items: flex-start;
+    margin-bottom: 10%; 
+    gap:20px;
+
 }
 
 .content-group .photo,
@@ -158,10 +165,14 @@ body, html {
 
 .content-group .text {
     color:var(--text-color);
+    width: 50%;
+    line-height: 1.8;
+    padding: 50px;
 }
 
 .content-group .text h1 {
     font-size: 1.4vw;
+    margin: 10px 0;
 }
 
 .store-text {
@@ -284,4 +295,22 @@ footer {
     padding-top: 10px;
     font-size: 14px;
   }
-  
+  /* slide */
+
+/* 初始隱藏狀態 */
+/* 初始狀態（隱藏在左側，透明度為0） */
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s ease-out;
+}
+.hidden2 {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1s ease-out;
+}
+/* 當觸發動畫時 */
+.slide-in {
+    opacity: 1;
+    transform: translateX(0);
+}
